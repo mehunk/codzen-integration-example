@@ -4,9 +4,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "fetch-api": "bun --env-file=../.env run fetch-api.ts",
-    "openai-sdk": "bun --env-file=../.env run openai-sdk.ts",
-    "langchain": "bun --env-file=../.env run langchain.ts"
+    "fetch-api": "bun run fetch-api.ts",
+    "openai-sdk": "bun run openai-sdk.ts",
+    "langchain": "bun run langchain.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.3",
