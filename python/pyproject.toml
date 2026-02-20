@@ -1,0 +1,56 @@
+[project]
+name = "python"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pydantic-settings>=2.13.1",
+    "openai>=1.0.0",
+    "langchain-openai>=0.1.0",
+    "langchain-core>=0.2.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.2",
+]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 88
+
+[tool.ruff.lint]
+# Enable all rules
+select = ["ALL"]
+
+# Ignore some overly strict or inapplicable rules
+ignore = [
+    "D",       # pydocstyle - docstring rules (remove this line to enable if needed)
+    "COM812",  # Conflicts with formatter
+    "ISC001",  # Conflicts with formatter
+    "S310",    # Audit URL open for permitted schemes
+    "T201",
+    "TC002",   # pydantic needs runtime access to type annotations
+]
+
+# Allow auto-fix for all rules
+fixable = ["ALL"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# Test files can use assert and magic values
+"tests/**/*.py" = ["S101", "PLR2004"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pyright]
+# Pylance uses pyright as backend
+pythonVersion = "3.14"
+typeCheckingMode = "strict"
+# These rules are handled by Ruff, avoid duplication
+reportUnusedImport = false
+reportUnusedVariable = false
