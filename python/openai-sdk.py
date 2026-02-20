@@ -1,18 +1,13 @@
-import httpx
 from openai import OpenAI
 
 from env import env
 
 # Create OpenAI client with custom base URL, API key, and SSL context
-openai = OpenAI(
-    base_url=f"{env.API_BASE_URL}/v1",
-    api_key=env.CODZEN_TOKEN,
-    http_client=httpx.Client(verify=False),  # noqa: S501
-)
+openai = OpenAI(base_url="https://codzen.ai/v1", api_key=env.CODZEN_TOKEN)
 
 # Create chat completion
 completion = openai.chat.completions.create(
-    model=env.MODEL,
+    model="gpt-5-mini",
     messages=[
         {
             "role": "user",

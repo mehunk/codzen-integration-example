@@ -5,7 +5,7 @@ import urllib.request
 from env import env
 
 request_body = json.dumps({
-    "model": env.MODEL,
+    "model": "gpt-5-mini",
     "messages": [
         {
             "role": "user",
@@ -15,7 +15,7 @@ request_body = json.dumps({
 }).encode()
 
 req = urllib.request.Request(
-    f"{env.API_BASE_URL}/v1/chat/completions",
+    "https://codzen.ai/v1/chat/completions",
     data=request_body,
     headers={
         "Authorization": f"Bearer {env.CODZEN_TOKEN}",

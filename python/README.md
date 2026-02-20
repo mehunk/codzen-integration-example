@@ -24,13 +24,15 @@ Install dependencies:
 uv sync
 ```
 
-Create a `.env` file in this directory with the following variables:
+Create a `.env` file in this directory with the following variable:
 
 ```env
 CODZEN_TOKEN=your_api_token_here
-MODEL=your_model_id_here
-API_BASE_URL=https://codzen.ai
 ```
+
+**Note:** `MODEL` and `API_BASE_URL` are hardcoded in the code files:
+- `MODEL="gpt-5-mini"`
+- `API_BASE_URL="https://codzen.ai"`
 
 ## Running the Examples
 
@@ -57,8 +59,12 @@ uv run python langchain.py
 | Variable | Required | Description |
 |---|---|---|
 | `CODZEN_TOKEN` | Yes | Bearer token for API authentication |
-| `MODEL` | Yes | Model identifier to use for completions |
-| `API_BASE_URL` | Yes | Base URL of the Codzen API endpoint (must be a valid URL) |
+
+**Hardcoded Configuration:**
+| Variable | Value |
+|---|---|
+| `MODEL` | `gpt-5-mini` |
+| `API_BASE_URL` | `https://codzen.ai` |
 
 ## Tech Stack
 
