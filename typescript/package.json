@@ -1,0 +1,25 @@
+{
+  "name": "typescript",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "fetch-api": "bun --env-file=../.env run fetch-api.ts",
+    "openai-sdk": "bun --env-file=../.env run openai-sdk.ts",
+    "langchain": "bun --env-file=../.env run langchain.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.3",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.1.26",
+    "@langchain/openai": "^1.2.8",
+    "@openai/openai": "npm:@jsr/openai__openai",
+    "@t3-oss/env-core": "^0.13.10",
+    "zod": "^4.3.6"
+  }
+}
