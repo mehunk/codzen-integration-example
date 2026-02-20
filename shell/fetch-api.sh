@@ -10,12 +10,12 @@ if [[ -f "$SCRIPT_DIR/.env" ]]; then
   set +a
 fi
 
-response=$(curl -s -w "\n%{http_code}" "${API_BASE_URL}/v1/chat/completions" \
+response=$(curl -s -w "\n%{http_code}" "https://codzen.ai/v1/chat/completions" \
   -X POST \
   -H "Authorization: Bearer ${CODZEN_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "'"${MODEL}"'",
+    "model": "gpt-5-mini",
     "messages": [
       {
         "role": "user",
