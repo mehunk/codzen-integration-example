@@ -7,6 +7,7 @@ This project demonstrates how to integrate with the [Codzen](https://codzen.ai) 
 | File | Approach | Description |
 |---|---|---|
 | [fetch_api.py](fetch_api.py) | urllib (stdlib) | Direct HTTP POST with no third-party HTTP dependencies |
+| [httpx_api.py](httpx_api.py) | httpx | Modern async-capable HTTP client |
 | [openai-sdk.py](openai-sdk.py) | OpenAI SDK | Official OpenAI Python client with custom base URL |
 | [langchain.py](langchain.py) | LangChain | LangChain's `ChatOpenAI` wrapper for chat completions |
 
@@ -38,6 +39,7 @@ CODZEN_TOKEN=your_api_token_here
 
 ```bash
 uv run python fetch_api.py
+uv run python httpx_api.py
 uv run python openai-sdk.py
 uv run python langchain.py
 ```
@@ -48,6 +50,7 @@ uv run python langchain.py
 .
 ├── env.py          # Type-safe environment variable validation (pydantic-settings)
 ├── fetch_api.py    # Integration via urllib (standard library)
+├── httpx_api.py    # Integration via httpx
 ├── openai-sdk.py   # Integration via OpenAI Python SDK
 ├── langchain.py    # Integration via LangChain
 ├── pyproject.toml

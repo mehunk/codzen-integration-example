@@ -4,19 +4,19 @@ import urllib.request
 
 from env import env
 
-request_body = json.dumps({
-    "model": "gpt-5-mini",
-    "messages": [
-        {
-            "role": "user",
-            "content": "What is the meaning of life?",
-        },
-    ],
-}).encode()
-
 req = urllib.request.Request(
     "https://codzen.ai/v1/chat/completions",
-    data=request_body,
+    data=json.dumps(
+        {
+            "model": "gpt-5-mini",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": "What is the meaning of life?",
+                },
+            ],
+        }
+    ).encode(),
     headers={
         "Authorization": f"Bearer {env.CODZEN_TOKEN}",
         "Content-Type": "application/json",
