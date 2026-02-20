@@ -23,12 +23,10 @@ Install dependencies:
 bun install
 ```
 
-Create a `.env` file in this directory with the following variables:
+Create a `.env` file in this directory with the following variable:
 
 ```env
 CODZEN_TOKEN=your_api_token_here
-MODEL=your_model_id_here
-API_BASE_URL=https://your.codzen.endpoint
 ```
 
 ## Running the Examples
@@ -62,8 +60,6 @@ bun run langchain
 | Variable | Required | Description |
 |---|---|---|
 | `CODZEN_TOKEN` | Yes | Bearer token for API authentication |
-| `MODEL` | Yes | Model identifier to use for completions |
-| `API_BASE_URL` | Yes | Base URL of the Codzen API endpoint |
 
 ## Tech Stack
 

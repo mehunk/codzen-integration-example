@@ -5,10 +5,10 @@ import { env } from './env';
 
 const model = new ChatOpenAI({
   configuration: {
-    baseURL: `${env.API_BASE_URL}/v1`,
+    baseURL: 'https://codzen.ai/v1',
     apiKey: env.CODZEN_TOKEN,
   },
-  model: env.MODEL,
+  model: 'gpt-5-mini',
 });
 
 const response = await model.invoke([

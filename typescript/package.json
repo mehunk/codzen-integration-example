@@ -6,7 +6,8 @@
   "scripts": {
     "fetch-api": "bun run fetch-api.ts",
     "openai-sdk": "bun run openai-sdk.ts",
-    "langchain": "bun run langchain.ts"
+    "langchain": "bun run langchain.ts",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.3",

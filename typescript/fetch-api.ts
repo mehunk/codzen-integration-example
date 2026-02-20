@@ -1,13 +1,13 @@
 import { env } from './env';
 
-const response = await fetch(`${env.API_BASE_URL}/v1/chat/completions`, {
+const response = await fetch('https://codzen.ai/v1/chat/completions', {
   method: 'POST',
   headers: {
     Authorization: `Bearer ${env.CODZEN_TOKEN}`,
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    model: env.MODEL,
+    model: 'gpt-5-mini',
     messages: [
       {
         role: 'user',

@@ -3,12 +3,12 @@ import OpenAI from '@openai/openai';
 import { env } from './env';
 
 const openai = new OpenAI({
-  baseURL: `${env.API_BASE_URL}/v1`,
+  baseURL: 'https://codzen.ai/v1',
   apiKey: env.CODZEN_TOKEN,
 });
 
 const completion = await openai.chat.completions.create({
-  model: env.MODEL,
+  model: 'gpt-5-mini',
   messages: [
     {
       role: 'user',
